@@ -175,7 +175,7 @@ const Index = () => {
               Services
             </h2>
             <p className="text-sm text-muted-foreground mt-2">
-              Comprehensive solutions for your digital needs
+              Expert Guidance for Company Formation & Compliance
             </p>
           </div>
 
