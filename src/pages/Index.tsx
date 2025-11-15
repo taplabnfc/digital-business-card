@@ -1,45 +1,102 @@
-import { Mail, Phone, ExternalLink, Code, TrendingUp, Briefcase, Users } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  ExternalLink,
+  Building2,
+  Wallet,
+  FileSpreadsheet,
+  Receipt,
+  FileSignature,
+  FileCheck,
+  Stamp,
+  Medal,
+  Globe2,
+  Users,
+  Crown,
+  Briefcase
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/nfc-profile.jpeg";
 
 const Index = () => {
   const profile = {
-    name: "Alex Morgan",
-    title: "Digital Solutions Expert",
-    bio: "Passionate about creating innovative digital experiences that drive business growth. With over 8 years of experience in web development and digital strategy, I help businesses transform their online presence.",
-    phone: "+1234567890",
-    email: "alex.morgan@example.com",
-    businessLink: "https://example.com",
+    name: "Mohammed Ajmal Idrisi",
+    title: "Business Owner - One Consultant",
+    bio: "Helping entrepreneurs understand UAE markets and tailoring the best suitable option available to start their dream business in UAE, Qatar, Oman and Saudi",
+    phone: "04 528 4126",
+    email: "info@oneconsultant.ae",
+    businessLink: "https://oneconsultant.ae/",
     businessName: "Visit My Portfolio"
   };
 
   const services = [
     {
-      icon: Code,
-      title: "Web Development",
-      description: "Custom websites and web applications built with modern technologies"
+      icon: Building2,
+      title: "Company Formation Advisor",
+      description: "Expert guidance for setting up your company legally and efficiently."
     },
     {
-      icon: TrendingUp,
-      title: "Digital Strategy",
-      description: "Data-driven strategies to accelerate your online growth"
+      icon: Wallet,
+      title: "Bank Account Opening Assistance",
+      description: "Support in opening corporate bank accounts smoothly."
     },
     {
-      icon: Briefcase,
-      title: "Business Consulting",
-      description: "Expert guidance to optimize your digital operations"
+      icon: FileSpreadsheet,
+      title: "Accounting & Bookkeeping Solutions",
+      description: "Accurate and reliable accounting and bookkeeping services."
+    },
+    {
+      icon: Receipt,
+      title: "VAT Registration Assistance",
+      description: "Professional help with VAT registration and compliance."
+    },
+    {
+      icon: FileSignature,
+      title: "Secretarial Services",
+      description: "Corporate secretarial services to maintain legal compliance."
+    },
+    {
+      icon: FileCheck,
+      title: "Tax Registration",
+      description: "Complete assistance for business tax registration."
+    },
+    {
+      icon: Stamp,
+      title: "Trademark Registration",
+      description: "Secure your brand identity with trademark registration."
+    },
+    {
+      icon: Medal,
+      title: "Golden Visa Services",
+      description: "Guidance and support for UAE Golden Visa applications."
+    },
+    {
+      icon: Globe2,
+      title: "Tax Residency Services",
+      description: "Assistance with obtaining tax residency certificates."
     },
     {
       icon: Users,
-      title: "Brand Development",
-      description: "Creating compelling brand identities that resonate"
+      title: "PRO (Public Relations Officer) Services",
+      description: "End-to-end PRO services for all government-related processes."
+    },
+    {
+      icon: Briefcase,
+      title: "Professional Services",
+      description: "Wide range of corporate and professional support services."
+    },
+    {
+      icon: Crown,
+      title: "VIP Client Services",
+      description: "Exclusive services tailored for premium clients."
     }
   ];
 
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-background to-purple-50 dark:from-gray-900 dark:via-background dark:to-indigo-950">
       <main className="container max-w-4xl py-12 px-4 sm:px-6 lg:px-8">
         {/* Header Card */}
         <Card className="mb-8 border-border">
@@ -53,7 +110,7 @@ const Index = () => {
                   className="w-32 h-32 rounded-full object-cover ring-2 ring-offset-4 ring-border"
                 />
               </div>
-              
+
               {/* Name & Title */}
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
@@ -83,7 +140,7 @@ const Index = () => {
                     Call Me
                   </a>
                 </Button>
-                
+
                 <Button
                   asChild
                   size="default"
@@ -94,7 +151,7 @@ const Index = () => {
                     Email Me
                   </a>
                 </Button>
-                
+
                 <Button
                   asChild
                   variant="outline"
@@ -121,12 +178,12 @@ const Index = () => {
               Comprehensive solutions for your digital needs
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
+                <Card
                   key={index}
                   className="border-border hover:border-primary/50 transition-colors duration-200"
                 >
@@ -156,7 +213,7 @@ const Index = () => {
       <footer className="border-t border-border mt-16">
         <div className="container max-w-4xl py-6 px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            Powered by <span className="font-semibold text-foreground">@YourCompany</span>
+            Powered by <span className="font-semibold text-foreground">@TapLabCompany</span>
           </p>
         </div>
       </footer>
