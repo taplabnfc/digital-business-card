@@ -1,10 +1,10 @@
-import { Mail, Phone, ExternalLink, Briefcase, Code, TrendingUp, Users } from "lucide-react";
+import { Mail, Phone, ExternalLink, Code, TrendingUp, Briefcase, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Index = () => {
-  // Sample data - replace with actual information
   const profile = {
     name: "Alex Morgan",
     title: "Digital Solutions Expert",
@@ -39,122 +39,126 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex flex-col" style={{ perspective: "1500px" }}>
-      <main className="flex-1 flex items-center justify-center p-4 sm:p-8">
-        <Card className="w-full max-w-4xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-3d)] transition-all duration-500 animate-scale-in hover:-translate-y-2" style={{ transformStyle: "preserve-3d" }}>
-          <div className="p-8 sm:p-12 space-y-12">
-            {/* Header Section */}
-            <div className="flex flex-col items-center text-center space-y-6 animate-fade-in" style={{ transformStyle: "preserve-3d" }}>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-30 animate-float"></div>
+    <div className="min-h-screen bg-background">
+      <main className="container max-w-4xl py-12 px-4 sm:px-6 lg:px-8">
+        {/* Header Card */}
+        <Card className="mb-8 border-border">
+          <CardContent className="p-8 sm:p-12">
+            <div className="flex flex-col items-center text-center space-y-6">
+              {/* Profile Image */}
+              <div className="relative">
                 <img
                   src={profilePhoto}
                   alt={profile.name}
-                  className="relative w-40 h-40 rounded-full object-cover border-4 border-background shadow-xl transition-transform duration-500 group-hover:scale-110"
-                  style={{ transform: "translateZ(30px)" }}
+                  className="w-32 h-32 rounded-full object-cover ring-2 ring-offset-4 ring-border"
                 />
               </div>
               
+              {/* Name & Title */}
               <div className="space-y-2">
-                <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
                   {profile.name}
                 </h1>
-                <p className="text-xl text-muted-foreground font-medium">
+                <p className="text-lg text-muted-foreground font-medium">
                   {profile.title}
                 </p>
               </div>
-            </div>
 
-            {/* Bio Section */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
-              <p className="text-center text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+              <Separator className="w-16" />
+
+              {/* Bio */}
+              <p className="text-foreground/70 leading-relaxed max-w-2xl">
                 {profile.bio}
               </p>
-            </div>
 
-            {/* Contact Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "both", transformStyle: "preserve-3d" }}>
-              <Button
-                asChild
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-[var(--shadow-3d)]"
-                size="lg"
-                style={{ transform: "translateZ(20px)" }}
-              >
-                <a href={`tel:${profile.phone}`} className="hover:-translate-y-1 transition-transform duration-300">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Me
-                </a>
-              </Button>
-              
-              <Button
-                asChild
-                className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-[var(--shadow-3d)]"
-                size="lg"
-                style={{ transform: "translateZ(20px)" }}
-              >
-                <a href={`mailto:${profile.email}`} className="hover:-translate-y-1 transition-transform duration-300">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Email Me
-                </a>
-              </Button>
-              
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-2 hover:bg-muted transition-all duration-300 hover:scale-110 hover:shadow-[var(--shadow-3d)]"
-                style={{ transform: "translateZ(20px)" }}
-              >
-                <a href={profile.businessLink} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-1 transition-transform duration-300">
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  {profile.businessName}
-                </a>
-              </Button>
-            </div>
-
-            {/* Services Section */}
-            <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
-              <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Services
-              </h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" style={{ transformStyle: "preserve-3d" }}>
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="group p-6 rounded-2xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-primary/10 hover:to-secondary/10 border border-border transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-3d)] hover:-translate-y-2"
-                      style={{ 
-                        transformStyle: "preserve-3d",
-                        transform: `translateZ(${index * 5}px)`
-                      }}
-                    >
-                      <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110" style={{ transform: "translateZ(15px)" }}>
-                          <Icon className="h-6 w-6 text-primary-foreground" />
-                        </div>
-                        <div className="flex-1 space-y-2">
-                          <h3 className="font-semibold text-lg text-foreground">
-                            {service.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+              {/* Contact Buttons */}
+              <div className="flex flex-wrap justify-center gap-3 pt-4">
+                <Button
+                  asChild
+                  size="default"
+                  className="font-medium"
+                >
+                  <a href={`tel:${profile.phone}`}>
+                    <Phone className="mr-2 h-4 w-4" />
+                    Call Me
+                  </a>
+                </Button>
+                
+                <Button
+                  asChild
+                  size="default"
+                  className="font-medium"
+                >
+                  <a href={`mailto:${profile.email}`}>
+                    <Mail className="mr-2 h-4 w-4" />
+                    Email Me
+                  </a>
+                </Button>
+                
+                <Button
+                  asChild
+                  variant="outline"
+                  size="default"
+                  className="font-medium"
+                >
+                  <a href={profile.businessLink} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    {profile.businessName}
+                  </a>
+                </Button>
               </div>
             </div>
-          </div>
+          </CardContent>
         </Card>
+
+        {/* Services Section */}
+        <div className="space-y-6">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Services
+            </h2>
+            <p className="text-sm text-muted-foreground mt-2">
+              Comprehensive solutions for your digital needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="border-border hover:border-primary/50 transition-colors duration-200"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="font-semibold text-base text-foreground">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="py-6 text-center text-sm text-muted-foreground border-t border-border/50">
-        <p>Powered by <span className="font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">@YourCompany</span></p>
+      <footer className="border-t border-border mt-16">
+        <div className="container max-w-4xl py-6 px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            Powered by <span className="font-semibold text-foreground">@YourCompany</span>
+          </p>
+        </div>
       </footer>
     </div>
   );
