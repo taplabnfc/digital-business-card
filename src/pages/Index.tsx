@@ -13,7 +13,8 @@ import {
   Globe2,
   Users,
   Crown,
-  Briefcase
+  Briefcase,
+  Linkedin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,7 +29,8 @@ const Index = () => {
     phone: "04 528 4126",
     email: "info@oneconsultant.ae",
     businessLink: "https://oneconsultant.ae/",
-    businessName: "Visit My Portfolio"
+    businessName: "Visit My Portfolio",
+    linkedin: "https://www.linkedin.com/in/idrisi-ajmal-2b382974/"
   };
 
   const services = [
@@ -102,6 +104,7 @@ const Index = () => {
         <Card className="mb-8 border-border">
           <CardContent className="p-8 sm:p-12">
             <div className="flex flex-col items-center text-center space-y-6">
+
               {/* Profile Image */}
               <div className="relative">
                 <img
@@ -130,25 +133,26 @@ const Index = () => {
 
               {/* Contact Buttons */}
               <div className="flex flex-wrap justify-center gap-3 pt-4">
-                <Button
-                  asChild
-                  size="default"
-                  className="font-medium"
-                >
+
+                <Button asChild size="default" className="font-medium">
                   <a href={`tel:${profile.phone}`}>
                     <Phone className="mr-2 h-4 w-4" />
                     Call Me
                   </a>
                 </Button>
 
-                <Button
-                  asChild
-                  size="default"
-                  className="font-medium"
-                >
+                <Button asChild size="default" className="font-medium">
                   <a href={`mailto:${profile.email}`}>
                     <Mail className="mr-2 h-4 w-4" />
                     Email Me
+                  </a>
+                </Button>
+
+                {/* 🔹 LinkedIn Button */}
+                <Button asChild size="default" className="font-medium">
+                  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="mr-2 h-4 w-4" />
+                    LinkedIn
                   </a>
                 </Button>
 
