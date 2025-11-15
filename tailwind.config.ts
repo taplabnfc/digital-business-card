@@ -108,6 +108,14 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "tilt": {
+          "0%, 100%": {
+            transform: "rotateY(-5deg) rotateX(5deg)",
+          },
+          "50%": {
+            transform: "rotateY(5deg) rotateX(-5deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +123,7 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
         "float": "float 3s ease-in-out infinite",
+        "tilt": "tilt 6s ease-in-out infinite",
       },
     },
   },

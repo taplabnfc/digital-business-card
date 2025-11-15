@@ -39,18 +39,19 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex flex-col" style={{ perspective: "1500px" }}>
       <main className="flex-1 flex items-center justify-center p-4 sm:p-8">
-        <Card className="w-full max-w-4xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-500 animate-scale-in">
+        <Card className="w-full max-w-4xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-3d)] transition-all duration-500 animate-scale-in hover:-translate-y-2" style={{ transformStyle: "preserve-3d" }}>
           <div className="p-8 sm:p-12 space-y-12">
             {/* Header Section */}
-            <div className="flex flex-col items-center text-center space-y-6 animate-fade-in">
-              <div className="relative">
+            <div className="flex flex-col items-center text-center space-y-6 animate-fade-in" style={{ transformStyle: "preserve-3d" }}>
+              <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-30 animate-float"></div>
                 <img
                   src={profilePhoto}
                   alt={profile.name}
-                  className="relative w-40 h-40 rounded-full object-cover border-4 border-background shadow-xl"
+                  className="relative w-40 h-40 rounded-full object-cover border-4 border-background shadow-xl transition-transform duration-500 group-hover:scale-110"
+                  style={{ transform: "translateZ(30px)" }}
                 />
               </div>
               
@@ -72,13 +73,14 @@ const Index = () => {
             </div>
 
             {/* Contact Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+            <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "both", transformStyle: "preserve-3d" }}>
               <Button
                 asChild
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-[var(--shadow-3d)]"
                 size="lg"
+                style={{ transform: "translateZ(20px)" }}
               >
-                <a href={`tel:${profile.phone}`}>
+                <a href={`tel:${profile.phone}`} className="hover:-translate-y-1 transition-transform duration-300">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Me
                 </a>
@@ -86,10 +88,11 @@ const Index = () => {
               
               <Button
                 asChild
-                className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-gradient-to-r from-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-[var(--shadow-3d)]"
                 size="lg"
+                style={{ transform: "translateZ(20px)" }}
               >
-                <a href={`mailto:${profile.email}`}>
+                <a href={`mailto:${profile.email}`} className="hover:-translate-y-1 transition-transform duration-300">
                   <Mail className="mr-2 h-5 w-5" />
                   Email Me
                 </a>
@@ -99,9 +102,10 @@ const Index = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-2 hover:bg-muted transition-all duration-300 hover:scale-105"
+                className="border-2 hover:bg-muted transition-all duration-300 hover:scale-110 hover:shadow-[var(--shadow-3d)]"
+                style={{ transform: "translateZ(20px)" }}
               >
-                <a href={profile.businessLink} target="_blank" rel="noopener noreferrer">
+                <a href={profile.businessLink} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-1 transition-transform duration-300">
                   <ExternalLink className="mr-2 h-5 w-5" />
                   {profile.businessName}
                 </a>
@@ -114,16 +118,20 @@ const Index = () => {
                 Services
               </h2>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" style={{ transformStyle: "preserve-3d" }}>
                 {services.map((service, index) => {
                   const Icon = service.icon;
                   return (
                     <div
                       key={index}
-                      className="group p-6 rounded-2xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-primary/10 hover:to-secondary/10 border border-border transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      className="group p-6 rounded-2xl bg-gradient-to-br from-muted/50 to-muted/30 hover:from-primary/10 hover:to-secondary/10 border border-border transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-3d)] hover:-translate-y-2"
+                      style={{ 
+                        transformStyle: "preserve-3d",
+                        transform: `translateZ(${index * 5}px)`
+                      }}
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg group-hover:shadow-xl transition-shadow">
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110" style={{ transform: "translateZ(15px)" }}>
                           <Icon className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div className="flex-1 space-y-2">
