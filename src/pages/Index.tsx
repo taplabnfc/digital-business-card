@@ -29,7 +29,7 @@ const Index = () => {
     phone: "0527868411",
     email: "ajmal@oneconsultant.ae",
     businessLink: "https://oneconsultant.ae/",
-    businessName: "Visit My Portfolio",
+    businessName: "Visit My Website",
     linkedin: "https://www.linkedin.com/in/idrisi-ajmal-2b382974/"
   };
 
