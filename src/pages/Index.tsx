@@ -26,8 +26,8 @@ const Index = () => {
     name: "Mohammed Ajmal Idrisi",
     title: "Business Owner - One Consultant",
     bio: "Helping entrepreneurs understand UAE markets and tailoring the best suitable option available to start their dream business in UAE, Qatar, Oman and Saudi",
-    phone: "04 528 4126",
-    email: "info@oneconsultant.ae",
+    phone: "0527868411",
+    email: "ajmal@oneconsultant.ae",
     businessLink: "https://oneconsultant.ae/",
     businessName: "Visit My Portfolio",
     linkedin: "https://www.linkedin.com/in/idrisi-ajmal-2b382974/"
